@@ -33,8 +33,15 @@ public class UserAddMemberUI extends LibUI{
 		String name = scanStr("이름을 입력하세요 : ");
 		String birth = scanStr("생년월일 6자리를 -빼고 입력해주세요 : ");
 		String email = scanStr("Email을 입력해주세요 : ");
+		while(libdao.equalsEmail(email)) { 
+			System.out.println("입력하신 Email이 중복입니다 다른 Email을 입력해주세요");
+			email = scanStr("Email을 입력해주세요 : ");
+		}
 		String phone = scanStr("전화번호를 -빼고 입력해주세요 : ");
-		
+		while(libdao.equalsPhone(phone)) { 
+			System.out.println("입력하신 전화번호가 중복입니다 다른 전화번호를 입력해주세요");
+			phone = scanStr("전화번호를 입력해주세요 : ");
+		}
 		MemberVO member = new MemberVO();
 		
 		member.setId(id);

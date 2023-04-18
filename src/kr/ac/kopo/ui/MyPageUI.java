@@ -2,17 +2,15 @@ package kr.ac.kopo.ui;
 
 import java.util.Scanner;
 
-public class LoginUI extends LibUI{
-	
-	public static boolean isLogin = false;
-	public static String userID = "";
+public class MyPageUI extends LibUI{
 	
 	private int menu() {
 		System.out.println("------------------------------------------");
 		System.out.println("\t 해당되는 항목을 선택하세요");
 		System.out.println("------------------------------------------");
-		System.out.println("1. 일반회원 로그인");
-		System.out.println("2. 관리자 로그인");
+		System.out.println("1. 비밀번호수정");
+		System.out.println("2. 계정탈퇴");
+		System.out.println("3. 대여중인 도서목록");
 		System.out.println("0. 이전화면으로");
 		Scanner sc = new Scanner(System.in);
 		int type = sc.nextInt();
@@ -20,7 +18,7 @@ public class LoginUI extends LibUI{
 		
 		return type;
 	}
-
+	
 	@Override
 	public void execute() throws Exception {
 		
@@ -30,10 +28,13 @@ public class LoginUI extends LibUI{
 			switch (type) {
 			
 			case 1:
-				ui = new UserLoginUI();
+				ui = new UserUpdateUI();
 				break;
 			case 2:
-//				ui = new AdminLoginUI();
+				ui = new UserDeleteUI();
+				break;
+			case 3:
+				ui = new UserRentalUI();
 				break;
 			case 0:
 				super.execute();
@@ -49,5 +50,5 @@ public class LoginUI extends LibUI{
 		
 		
 	}
-	
+
 }
