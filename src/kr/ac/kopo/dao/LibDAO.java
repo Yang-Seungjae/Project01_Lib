@@ -152,7 +152,8 @@ public class LibDAO {
 			pstmt.setString(1, password2);
 			pstmt.setString(2, id);
 
-			ResultSet rs = pstmt.executeQuery();
+			
+			pstmt.executeUpdate(); // 집에서 수정함 확인필요
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -169,7 +170,8 @@ public class LibDAO {
 
 			pstmt.setString(1, id);
 
-			ResultSet rs = pstmt.executeQuery();
+			pstmt.executeUpdate(); // 집에서 수정함 확인필요
+			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -264,7 +266,55 @@ public class LibDAO {
 	    return date.plusWeeks(2);
 	}
 	
+	public List<BookVO> rentalInfo(String id) {// 집에서 만듬 확인 필요
 
+		List<BookVO> bookList = new ArrayList<>();
+
+		StringBuilder sql = new StringBuilder();
+		sql.append("select no, name, writer, publisher, user_id from t_rental_list m1 join t_book m2 on m2.no = m1.book_no and user_id = ? ");
+		
+		try (Connection conn = new ConnectionFactory().getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql.toString());) {
+				
+				pstmt.setString(1, id);
+				ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				int no = rs.getInt("no");
+				String name = rs.getString("name");
+				String writer = rs.getString("writer");
+				String publisher = rs.getString("publisher");
+				
+
+				BookVO book = new BookVO(no, name, writer, publisher);
+
+
+				bookList.add(book);
+
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return bookList;
+	}
+	
+	public void returnBook(int no) {// 집에서 만듬 확인 필요
+		
+		StringBuilder sql = new StringBuilder();
+		sql.append("delete from t_rental_list where book_no = ? ");
+		
+		try (Connection conn = new ConnectionFactory().getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql.toString());) {
+
+			pstmt.setInt(1, no);
+
+			pstmt.executeUpdate(); // 집에서 수정함 확인필요
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 	
 	
 	

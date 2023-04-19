@@ -34,7 +34,7 @@ public class MyPageUI extends LibUI{
 				ui = new UserDeleteUI();
 				break;
 			case 3:
-				ui = new UserRentalUI();
+				ui = new UserRentalUI();// 집에서 만듬 확인 필요
 				break;
 			case 0:
 				super.execute();

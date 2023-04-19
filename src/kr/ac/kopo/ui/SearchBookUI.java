@@ -54,7 +54,9 @@ private String detail;
 				search = "publisher";
 				detail = scanStr("검색할 출판사를 입력하세요 : ");
 				break;
-			case 4: // 관리자 만들때 만들기
+			case 4: // 집에서 만듬 확인 필요
+				search = "no";
+				detail = scanStr("검색할 도서번호를 입력하세요 : ");
 				break;
 			case 0:
 				super.execute();

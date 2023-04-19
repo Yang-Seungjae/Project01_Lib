@@ -56,6 +56,16 @@ public class LibService {
 		
 		
 	}
+	public List<BookVO> rentalInfo(String id){// 집에서 만듬 확인 필요
+		
+		return libdao.rentalInfo(id);
+		
+	}
+	
+	public void returnBook(int no) {
+		
+		libdao.returnBook(no);
+	}
 	
 
 	

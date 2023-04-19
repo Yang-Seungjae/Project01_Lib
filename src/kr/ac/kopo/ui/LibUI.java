@@ -52,7 +52,7 @@ public class LibUI extends BaseUI {
 				ui = new RentalBookUI();
 				break;
 			case 6:
-//				ui = new ReturnBookUI();
+				ui = new ReturnBookUI();
 				break;
 			case 7:
 				ui = new AddNewBookUI();
