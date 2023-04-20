@@ -6,9 +6,9 @@ import kr.ac.kopo.LibServiceFactory;
 import kr.ac.kopo.Service.LibService;
 
 public class UserDeleteUI extends LibUI {
-	
-private LibService libService;
-	
+
+	private LibService libService;
+
 	public UserDeleteUI() {
 		libService = LibServiceFactory.getInstance();
 
@@ -21,14 +21,14 @@ private LibService libService;
 			String id = scanStr("ID를 입력하세요 : ");
 			String password = scanStr("비밀번호를 입력하세요 :");
 			int no = libService.login(id, password);
-			
-			
 
 			if (no == 0) {
 				System.out.println("잘못입력하셨습니다 다시입력하세요");
-			}else if(libService.deleteEqualsID(id)) {
-				System.out.println("대여중인 책이 있습니다");
-				System.out.println("대여 후 탈퇴해주세요");
+			} else if (libService.deleteEqualsID(id)) {
+				System.out.println("---------------------------------------------------------------------");
+				System.out.println("\t\t대여중인 책이 있습니다");
+				System.out.println("\t\t반납 후 탈퇴해주세요");
+				System.out.println("---------------------------------------------------------------------");
 				MyPageUI mp = new MyPageUI();
 				mp.execute();
 			} else {

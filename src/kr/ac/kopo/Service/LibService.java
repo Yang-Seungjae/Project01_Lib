@@ -78,6 +78,11 @@ public class LibService {
 		return libdao.deleteEqualsID(id);
 	}
 	
+	public void deleteLibBook(int no) {
+		
+		libdao.deleteLibBook(no);
+	}
+	
 
 	
 	
