@@ -33,7 +33,7 @@ public class LoginUI extends LibUI{
 				ui = new UserLoginUI();
 				break;
 			case 2:
-//				ui = new AdminLoginUI();
+				ui = new AdminLoginUI();
 				break;
 			case 0:
 				super.execute();

@@ -12,14 +12,20 @@ public class LibUI extends BaseUI {
 		System.out.println("1.회원가입");
 		System.out.println("2.로그인");
 		}
-		else {
+		else if(!LoginUI.userID.equals("admin")){
 		System.out.println("3.마이페이지");
 		System.out.println("4.도서검색");
 		System.out.println("5.도서대여");
 		System.out.println("6.도서반납");
-		System.out.println("7.도서등록"); // 나중에 관리자쪽으로 빼기
+		System.out.println("10.로그아웃 ");
+		} else {
+		System.out.println("7.도서등록");
+		System.out.println("8.도서삭제");
+		System.out.println("9.대출현황");
+		System.out.println("10.회원관리");
+		System.out.println("11.로그아웃 ");
 		}
-		System.out.println("0.로그아웃 및 프로그램 종료");
+		System.out.println("0.프로그램 종료");
 		System.out.print("원하는 항목을 선택하세요 : ");
 		Scanner sc = new Scanner(System.in);
 		int type = sc.nextInt();
@@ -37,7 +43,7 @@ public class LibUI extends BaseUI {
 			ILibUI ui = null;
 			switch (type) {
 			case 1:
-				ui = new AddMemberUI();
+				ui = new UserAddMemberUI();
 				break;
 			case 2:
 				ui = new LoginUI();
@@ -56,6 +62,15 @@ public class LibUI extends BaseUI {
 				break;
 			case 7:
 				ui = new AddNewBookUI();
+				break;
+			case 8:
+				
+				break;
+			case 9:
+				ui = new AdminRentalInfo();
+				break;
+			case 11:
+				ui = new LogOutUI();
 				break;
 			case 0:
 				ui = new ExitUI();

@@ -21,9 +21,16 @@ private LibService libService;
 			String id = scanStr("ID를 입력하세요 : ");
 			String password = scanStr("비밀번호를 입력하세요 :");
 			int no = libService.login(id, password);
+			
+			
 
 			if (no == 0) {
 				System.out.println("잘못입력하셨습니다 다시입력하세요");
+			}else if(libService.deleteEqualsID(id)) {
+				System.out.println("대여중인 책이 있습니다");
+				System.out.println("대여 후 탈퇴해주세요");
+				MyPageUI mp = new MyPageUI();
+				mp.execute();
 			} else {
 				System.out.println("회원탈퇴하시겠습니까? ");
 				System.out.println("1. 예 ");

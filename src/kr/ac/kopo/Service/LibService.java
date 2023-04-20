@@ -6,6 +6,7 @@ import java.util.List;
 import kr.ac.kopo.dao.LibDAO;
 import kr.ac.kopo.vo.BookVO;
 import kr.ac.kopo.vo.MemberVO;
+import kr.ac.kopo.vo.RentalBookVO;
 
 
 public class LibService {
@@ -56,7 +57,7 @@ public class LibService {
 		
 		
 	}
-	public List<BookVO> rentalInfo(String id){// 집에서 만듬 확인 필요
+	public List<RentalBookVO> rentalInfo(String id){// 집에서 만듬 확인 필요
 		
 		return libdao.rentalInfo(id);
 		
@@ -65,6 +66,16 @@ public class LibService {
 	public void returnBook(int no) {
 		
 		libdao.returnBook(no);
+	}
+	
+	public List<RentalBookVO> adminRentalInfo(){
+		
+		return libdao.adminRentalInfo();
+	}
+	
+	public boolean deleteEqualsID(String id ) {
+		
+		return libdao.deleteEqualsID(id);
 	}
 	
 
