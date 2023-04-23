@@ -254,7 +254,7 @@ public class LibDAO {
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			System.out.println("---------------------------------------------------------------------");
-			System.out.println("\t\t   이미 대여중인 책입니다");
+			System.out.println("\t\t   이미 대여중이거나 없는 책입니다");
 			System.out.println("---------------------------------------------------------------------");
 			LibUI libui = new LibUI();
 			libui.execute();

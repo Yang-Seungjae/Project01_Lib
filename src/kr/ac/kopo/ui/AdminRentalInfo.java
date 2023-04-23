@@ -32,7 +32,7 @@ public class AdminRentalInfo extends LibUI {
 			System.out.println("\t\t 대여중인 책이 없습니다");
 		} else {
 			for (RentalBookVO book : bookList) {
-				System.out.printf("%-7s%-4s%-9s%-7s%-7s%-15s%-20s\n", book.getUser_id(), book.getNo(), book.getName(),
+				System.out.printf("%-7s%-4s%-8s%-7s%-7s%-15s%-20s\n", book.getUser_id(), book.getNo(), book.getName(),
 						book.getWriter(), book.getPublisher(), book.getRental_date(), book.getReturn_date());
 
 			}

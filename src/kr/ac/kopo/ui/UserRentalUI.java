@@ -30,7 +30,7 @@ public class UserRentalUI extends LibUI {// 집에서 만듬 확인 필요
 			System.out.println("\t\t 대여하신 책이 없습니다");
 		} else {
 			for (RentalBookVO book : bookList) {
-				System.out.println(book.getNo() + "\t" + book.getName() + "\t" + book.getWriter() + "\t"
+				System.out.println(book.getNo() + "     " + book.getName() + "\t" + book.getWriter() + "\t "
 						+ book.getPublisher() + "\t" + book.getRental_date() + "\t" + book.getReturn_date());
 			}
 		}

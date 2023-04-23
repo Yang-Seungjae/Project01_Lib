@@ -80,7 +80,7 @@ public class SearchBookUI extends LibUI {
 				System.out.println("\t\t검색하신 책이 존재하지 않습니다");
 			} else {
 				for (BookVO book : bookList) {
-					System.out.println(book.getNo() + "\t" + book.getName() + "\t" + book.getWriter() + "\t"
+					System.out.println(book.getNo() + "     " + book.getName() + "\t" + book.getWriter() + "\t"
 							+ book.getPublisher() + "\t");
 				}
 			}

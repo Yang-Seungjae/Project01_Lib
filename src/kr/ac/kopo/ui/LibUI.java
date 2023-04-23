@@ -13,11 +13,12 @@ public class LibUI extends BaseUI {
 			System.out.println("2.로그인");
 		} else if (!LoginUI.userID.equals("admin")) {
 			System.out.println("3.마이페이지");
-			System.out.println("4.도서검색");
-			System.out.println("5.도서대여");
-			System.out.println("6.도서반납");
+			System.out.println("4.도서대여");
+			System.out.println("5.도서반납");
+			System.out.println("6.도서검색");
 			System.out.println("10.로그아웃 ");
 		} else {
+			System.out.println("6.도서검색");
 			System.out.println("7.도서등록");
 			System.out.println("8.도서삭제");
 			System.out.println("9.대출현황");
@@ -50,13 +51,13 @@ public class LibUI extends BaseUI {
 				ui = new MyPageUI();
 				break;
 			case 4:
-				ui = new SearchBookUI();
-				break;
-			case 5:
 				ui = new RentalBookUI();
 				break;
-			case 6:
+			case 5:
 				ui = new ReturnBookUI();
+				break;
+			case 6:
+				ui = new SearchBookUI();
 				break;
 			case 7:
 				ui = new AddNewBookUI();
